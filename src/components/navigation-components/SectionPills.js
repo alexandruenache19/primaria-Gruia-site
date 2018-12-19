@@ -42,9 +42,7 @@ class SectionPills extends Component {
         this.state.categoriesRef.child(section.tabButtonTitle).child('documents').on('value', (snapshot) => {
         const documents = snapshot.val();
         if(documents) {
-
           console.log("Retrived:", documents["pdf1"]);
-
           this.state.currentTabs.push(
             {
               tabButton: section.tabButtonTitle,
