@@ -38,6 +38,25 @@
     });
   };
 
+  export const retrieveSubcategories = (category) => dispatch => {
+    const categoriesRef = databaseRef.ref('/category').child(category);
+    categoriesRef.child('subCategory').on('value', (snapshot) => {
+      const subCategories = snapshot.val();
+      if(subCategories) {
+        console.log("Retrived:",subCategories);
+        dispatch({
+          type: "RETRIEVE_SUBCATEGORIES",
+          payload: subCategories
+        })
+      } else {
+        dispatch({
+          type: "RETRIEVE_SUBCATEGORIES",
+          payload: null
+        })
+      };
+    });
+  };
+
   export const fetchUser = () => dispatch => {
     authRef.onAuthStateChanged(user => {
       if (user) {

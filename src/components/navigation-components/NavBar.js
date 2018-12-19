@@ -74,14 +74,14 @@ class NavBar extends Component {
                 Guvernanta
               </Button>
             </Link>
-            <Link to='/' className="dark-text-button">
+            <Link to='/comuna' className="dark-text-button">
               <Button className="nav-bar-menu-item" color="inherit">
-                Localnici
+                Comuna
               </Button>
             </Link>
-            <Link to='/' className="dark-text-button">
+            <Link to='/consiliul' className="dark-text-button">
               <Button className="nav-bar-menu-item" color="inherit">
-                Obiective turistice
+                Consiliul Local
               </Button>
             </Link>
             {this.props ?
@@ -108,29 +108,35 @@ class NavBar extends Component {
             onKeyDown={this.toggleDrawer('left', false)}
             style={{width: 240, flexDirection: 'column'}}
           >
-            <Link to='/' className="dark-text-button">
-              <Button className="nav-bar-menu-item" color="inherit">
-                Primarie
-              </Button>
-            </Link>
-            <Link to='/' className="dark-text-button">
-              <Button className="nav-bar-menu-item" color="inherit">
-                Localnici
-              </Button>
-            </Link>
-            <Link to='/' className="dark-text-button">
-              <Button className="nav-bar-menu-item" color="inherit">
-                Obiective turistice
-              </Button>
-            </Link>
-            {this.props ?
-              <Button className="nav-bar-menu-item" color="inherit" onClick={this.props.signOut}>
-                Delogare
-                <i style={{marginLeft: 10}} className="material-icons">exit_to_app</i>
-              </Button>
-              :
-              <SignIn/>
-            }
+          <Link to='/' style={{flex: 1, display: 'flex', alignItems: 'center'}} className="dark-text-button">
+            {/*<img src="../../img/magenta-logo.png" style={{maxWidth: 90}} />*/}
+            <Button className="nav-bar-menu-item" color="inherit">
+              Primaria Gruia
+            </Button>
+          </Link>
+          <Link to='/guvernanta' className="dark-text-button">
+            <Button className="nav-bar-menu-item" color="inherit">
+              Guvernanta
+            </Button>
+          </Link>
+          <Link to='/comuna' className="dark-text-button">
+            <Button className="nav-bar-menu-item" color="inherit">
+              Comuna
+            </Button>
+          </Link>
+          <Link to='/consiliul' className="dark-text-button">
+            <Button className="nav-bar-menu-item" color="inherit">
+              Consiliul Local
+            </Button>
+          </Link>
+          {this.props ?
+            <Button className="nav-bar-menu-item" color="inherit" onClick={this.props.signOut}>
+              Delogare
+              <i style={{marginLeft: 10}} className="material-icons">exit_to_app</i>
+            </Button>
+            :
+            <SignIn/>
+          }
         </div>
         </SwipeableDrawer>
       </div>
