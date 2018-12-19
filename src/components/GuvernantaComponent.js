@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import NavBar from './NavBar';
 import SectionPills from './NavPills/SectionPills';
+import Chips from './Chips/Chips'
 
 class GuvernantaComponent extends Component {
 
@@ -11,6 +12,7 @@ class GuvernantaComponent extends Component {
         <div >
           <NavBar />
           <SectionPills/>
+          <Chips/>
         </div>
     );
   }
