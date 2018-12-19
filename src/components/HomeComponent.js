@@ -9,8 +9,8 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import NavBar from './NavBar';
-import Typer from './Type'
+import NavBar from './navigation-components/NavBar';
+import { init } from 'ityped';
 import $ from 'jquery';
 
 var sections = {
@@ -35,6 +35,9 @@ class HomeComponent extends Component {
     $("button").mouseup(function() {
       $(this).blur();
     });
+
+    const fadingText = document.querySelector('#fading-text');
+    init(fadingText, { showCursor: false, strings: ['Transaparenta.', 'Traditii.', 'Biodiversitate.', 'Viziuni europeane.'] });
   }
 
   renderSections = () => {
@@ -83,16 +86,15 @@ class HomeComponent extends Component {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          color: '#fff'
+          color: '#fff',
+          padding: '3rem'
         }}>
-          <h1 className="header-title" style={{fontSize: '30px'}}>
+          <h1 className="header-title" style={{fontSize: '2.5rem'}}>
             Descopera Comuna Gruia
-            <p style={{position:'absolute', fontSize: '25px'}}>
-                <Typer/>
-            </p>
+            <p style={{position:'absolute', fontSize: '1.5rem'}} id="fading-text"></p>
           </h1>
         </div>
-        <Grid container style={{flexGrow: 1}} spacing={16} style={{padding: '2em'}}>
+        <Grid container style={{flexGrow: 1}} spacing={16} style={{padding: '3rem'}}>
           <Grid item xs={12}>
             <Grid container justify="center" spacing={16}>
               {this.renderSections()}

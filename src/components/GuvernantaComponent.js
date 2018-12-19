@@ -1,19 +1,19 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import NavBar from './NavBar';
-import SectionPills from './NavPills/SectionPills';
-import Chips from './Chips/Chips'
+import NavBar from './navigation-components/NavBar';
+import SectionPills from './navigation-components/SectionPills';
+import Grid from '@material-ui/core/Grid';
 
 class GuvernantaComponent extends Component {
 
   render() {
-    const { classes, ...rest } = this.props;
     return (
-        <div >
-          <NavBar />
-          <SectionPills/>
-          <Chips/>
+      <div >
+        <NavBar />
+        <div style={{padding: '3rem'}}>
+          <SectionPills />
         </div>
+      </div>
     );
   }
 }

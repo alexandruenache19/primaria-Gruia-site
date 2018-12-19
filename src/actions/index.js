@@ -23,7 +23,7 @@
 
     subCategoryRef.child('documents').on('value', (snapshot) => {
       const documents = snapshot.val();
-      if(documents){
+      if(documents) {
         console.log("Retrived:",documents);
         dispatch({
           type: "RETRIEVE_DOCUMENTS",
