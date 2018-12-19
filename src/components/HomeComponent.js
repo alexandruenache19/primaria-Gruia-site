@@ -1,0 +1,111 @@
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import _ from "lodash";
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+import NavBar from './NavBar';
+import Typer from './Type'
+import $ from 'jquery';
+
+var sections = {
+  'Guvernanta': {
+    'imagine': "http://www.gds.ro/wp-content/uploads/2017/09/primarie-municipiului-Craiova.jpg",
+    'descriere': 'Asta e descrierea'
+  },
+  'Comuna': {
+    'imagine': "http://www.comune.ro/files/comuna-dubova.jpg",
+    'descriere': 'Asta e descrierea'
+  },
+  'Localnici': {
+    'imagine': "https://fundatia-adept.org/wp-content/uploads/2018/04/Poza-localnici-1.jpg",
+    'descriere': 'Asta e descrierea'
+  }
+};
+
+class HomeComponent extends Component {
+
+  componentDidMount() {
+    // this prevents buttons from remaining focused
+    $("button").mouseup(function() {
+      $(this).blur();
+    });
+  }
+
+  renderSections = () => {
+    const displaySections = _.map(sections, (value, sectionTitle) => {
+      return (
+        <Grid key={sectionTitle} item xs={4}>
+          <Card>
+            <CardMedia
+              component="img"
+              style={{objectFit: 'cover'}}
+              height="140"
+              image={value['imagine']}
+              title={sectionTitle}
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="h2">
+                {sectionTitle}
+              </Typography>
+              <Typography component="p">
+                Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+                across all continents except Antarctica
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button size="small" color="inherit">
+                Afla mai multe
+              </Button>
+            </CardActions>
+          </Card>
+        </Grid>
+      );
+    });
+
+    return displaySections;
+  }
+
+  render() {
+    return (
+      <div>
+        <NavBar />
+        <div style={{
+          width: '100%',
+          height: '50vh',
+          backgroundSize: 'cover',
+          background: "url('https://romaniatourstore.com/wp-content/uploads/2016/05/Pestera-Village-Romania.jpg') no-repeat center center fixed",
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          color: '#fff'
+        }}>
+          <h1 className="header-title" style={{fontSize: '30px'}}>
+            Descopera Comuna Gruia
+            <p style={{position:'absolute', fontSize: '25px'}}>
+                <Typer/>
+            </p>
+          </h1>
+        </div>
+        <Grid container style={{flexGrow: 1}} spacing={16} style={{padding: '2em'}}>
+          <Grid item xs={12}>
+            <Grid container justify="center" spacing={16}>
+              {this.renderSections()}
+            </Grid>
+          </Grid>
+        </Grid>
+      </div>
+    );
+  }
+}
+
+function mapStateToProps({ auth }) {
+  return { auth };
+}
+
+export default connect(null, { })(HomeComponent);
