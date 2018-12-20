@@ -19,15 +19,6 @@ import { sectionTitles } from '../../config/constants';
 
 class SectionPills extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      category: props.category,
-      currentTabs: [],
-      categoriesRef: databaseRef.child('/category').child(props.category),
-    };
-  }
-
   componentWillMount() {
     // get the documents for the entire category
     this.props.retrieveDocuments('Guvernanta');
@@ -38,6 +29,10 @@ class SectionPills extends Component {
     $("button").mouseup(function() {
       $(this).blur();
     });
+  }
+
+  snapshotToArray(snapshot) {
+    return Object.entries(snapshot).map(e => Object.assign(e[1], { key: e[0] }))
   }
 
   createTabs() {
@@ -53,7 +48,7 @@ class SectionPills extends Component {
 
       let docVisual = documents[subCategory] ? (
         <span>
-          {documents[subCategory]['documents']["pdf1"]}
+          {this.snapshotToArray(documents[subCategory]['documents'])}
         </span>
       ) : (
         <span>
@@ -71,11 +66,6 @@ class SectionPills extends Component {
           )
         }
       );
-
-      // this.state.categoriesRef.child(section.tabButtonTitle).child('documents').on('value', (snapshot) => {
-      //   const documents = snapshot.val();
-      //
-      // });
     });
 
     return currentTabs;
