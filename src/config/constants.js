@@ -5,86 +5,87 @@ import Dashboard from "@material-ui/icons/Dashboard";
 import Schedule from "@material-ui/icons/Schedule";
 import List from "@material-ui/icons/List";
 
-export const guvernantaContent = [{
-  tabButton: "Acte Necesare",
-  tabIcon: Dashboard,
-  tabContent: (
-    <span>
-      <p>
-        Collaboratively administrate empowered markets via
-        plug-and-play networks. Dynamically procrastinate
-        B2C users after installed base benefits.
-      </p>
-    </span>
-  )
-},
-{
-  tabButton: "Proiecte",
-  tabIcon: Schedule,
-  tabContent: (
-    <span>
-      <li>
-        Efficiently unleash cross-media information without
-        cross-media value. Quickly maximize timely
-        deliverables for real-time schemas.
-      </li>
-      <li>
-        Efficiently unleash cross-media information without
-        cross-media value. Quickly maximize timely
-        deliverables for real-time schemas.
-      </li>
-    </span>
-  )
-},
-{
-  tabButton: "Informatii publice",
-  tabIcon: List,
-  tabContent: (
-    <span>
-      <p>
-        Collaboratively administrate empowered markets via
-        plug-and-play networks. Dynamically procrastinate
-        B2C users after installed base benefits.
-      </p>
-    </span>
-  )
-},
-{
-  tabButton: "Buget",
-  tabIcon: List,
-  tabContent: (
-    <span>
-      <p>
-        Collaboratively administrate empowered markets via
-        plug-and-play networks. Dynamically procrastinate
-        B2C users after installed base benefits.
-      </p>
-    </span>
-  )
-},
-{
-  tabButton: "Program cu publicul",
-  tabIcon: List,
-  tabContent: (
-    <span>
-      <p>
-        Collaboratively administrate empowered markets via
-        plug-and-play networks. Dynamically procrastinate
-        B2C users after installed base benefits.
-      </p>
-    </span>
-  )
-},
-{
-  tabButton: "Anunturi",
-  tabIcon: List,
-  tabContent: (
-    <span>
-      <p>
-        Collaboratively administrate empowered markets via
-        plug-and-play networks. Dynamically procrastinate
-        B2C users after installed base benefits.
-      </p>
-    </span>
-  )
-}]
+export const sectionTitles = {
+  "Consiliul":[
+    {
+      tabButtonTitle: "Echipă",
+      tabIcon: Dashboard
+    },
+    {
+      tabButtonTitle: "Rapoarte de activitate",
+      tabIcon: List
+    },
+    {
+      tabButtonTitle: "Dezbateri publice",
+      tabIcon: List
+    },
+    {
+      tabButtonTitle: "Hotărâri Consiliul Local",
+      tabIcon: List
+    },
+    {
+      tabButtonTitle:  "Proiecte de hotărâri",
+      tabIcon: List
+    },
+    {
+      tabButtonTitle: "Declarații de avere Consiliul Local",
+      tabIcon: Schedule
+    }
+  ],
+  "Guvernanta":[
+    {
+      tabButtonTitle: "Conducere",
+      tabIcon: Dashboard
+    },
+    {
+      tabButtonTitle: "Structură",
+      tabIcon: Dashboard
+    },
+    {
+      tabButtonTitle: "Formulare",
+      tabIcon: Dashboard
+    },
+    {
+      tabButtonTitle: "Taxe și impozite locale",
+      tabIcon: Dashboard
+    },
+    {
+      tabButtonTitle: "Declarații de avere",
+      tabIcon: Dashboard
+    },
+    {
+      tabButtonTitle: "Informatii Publice",
+      tabIcon: List
+    },
+    {
+      tabButtonTitle: "Proiecte",
+      tabIcon: List
+    },
+    {
+      tabButtonTitle: "Buget",
+      tabIcon: List
+    },
+  ],
+  "Comuna":[
+    {
+      tabButtonTitle: "Știri și anunțuri",
+      tabIcon: Dashboard
+    },
+    {
+      tabButtonTitle: "Evenimente",
+      tabIcon: List
+    },
+    {
+      tabButtonTitle: "Inițiative locale",
+      tabIcon: List
+    },
+    {
+      tabButtonTitle: "Educație și cultură",
+      tabIcon: List
+    },
+    {
+      tabButtonTitle:  "Tradiții",
+      tabIcon: List
+    },
+  ]
+};

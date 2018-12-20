@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import NavBar from './navigation-components/NavBar';
-import SectionPills from './navigation-components/SectionPills';
-import Grid from '@material-ui/core/Grid';
+import NavBar from '../navigation-components/NavBar';
+import SectionPills from '../navigation-components/SectionPills';
 
 class GuvernantaComponent extends Component {
 
@@ -11,7 +10,7 @@ class GuvernantaComponent extends Component {
       <div >
         <NavBar />
         <div style={{padding: '3rem'}}>
-          <SectionPills />
+          <SectionPills category = "Guvernanta" />
         </div>
       </div>
     );
