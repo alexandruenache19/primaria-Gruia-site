@@ -6,7 +6,7 @@ import Schedule from "@material-ui/icons/Schedule";
 import List from "@material-ui/icons/List";
 
 export const sectionTitles = {
-  "Consiliul":[
+  "consiliul":[
     {
       tabButtonTitle: "Echipă",
       tabIcon: Dashboard
@@ -32,7 +32,7 @@ export const sectionTitles = {
       tabIcon: Schedule
     }
   ],
-  "Guvernanta":[
+  "guvernanta":[
     {
       tabButtonTitle: "Conducere",
       tabIcon: Dashboard
@@ -66,7 +66,7 @@ export const sectionTitles = {
       tabIcon: List
     },
   ],
-  "Comuna":[
+  "comuna":[
     {
       tabButtonTitle: "Știri și anunțuri",
       tabIcon: Dashboard

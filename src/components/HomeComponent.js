@@ -36,6 +36,8 @@ class HomeComponent extends Component {
       $(this).blur();
     });
 
+    console.log(this.props.auth);
+
     const fadingText = document.querySelector('#fading-text');
     init(fadingText, { showCursor: false, strings: ['Transaparenta.', 'Traditii.', 'Biodiversitate.', 'Viziuni europeane.'] });
   }
@@ -57,8 +59,7 @@ class HomeComponent extends Component {
                 {sectionTitle}
               </Typography>
               <Typography component="p">
-                Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                across all continents except Antarctica
+                {value['descriere']}
               </Typography>
             </CardContent>
             <CardActions>
