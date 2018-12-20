@@ -4,12 +4,13 @@ import NavBar from '../navigation-components/NavBar';
 import SectionPills from '../navigation-components/SectionPills';
 
 class ConsiliulLocalComponent extends Component {
+
   render() {
     return (
       <div >
         <NavBar />
         <div style={{padding: '3rem'}}>
-          <SectionPills category = "Consiliul" />
+          <SectionPills category={"consiliul"} />
         </div>
       </div>
     );

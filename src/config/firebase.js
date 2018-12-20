@@ -13,6 +13,7 @@ firebase.initializeApp(config);
 
 export const databaseRef = firebase.database().ref();
 export const authRef = firebase.auth();
+export const categoriesRef = databaseRef.child('category');
 export const storageRef = firebase.storage();
 export const messagingRef = firebase.messaging();
 export const provider = new firebase.auth.GoogleAuthProvider();

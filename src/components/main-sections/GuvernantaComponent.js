@@ -10,7 +10,7 @@ class GuvernantaComponent extends Component {
       <div >
         <NavBar />
         <div style={{padding: '3rem'}}>
-          <SectionPills category = "Guvernanta" />
+          <SectionPills category={"guvernanta"} />
         </div>
       </div>
     );
