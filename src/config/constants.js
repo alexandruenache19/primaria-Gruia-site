@@ -89,3 +89,39 @@ export const sectionTitles = {
     },
   ]
 };
+export const membri = {
+  "consiliul":[
+    {
+      nume: "Nume",
+      descriere: "Descriere",
+      linkAvatar: ""
+    },
+    {
+      nume: "Nume",
+      descriere: "Descriere",
+      linkAvatar: ""
+    },
+    {
+      nume: "Nume",
+      descriere: "Descriere",
+      linkAvatar: ""
+    }
+  ],
+  "guvernanta":[
+    {
+      nume: "Nume",
+      descriere: "Descriere",
+      linkAvatar: ""
+    },
+    {
+      nume: "Nume",
+      descriere: "Descriere",
+      linkAvatar: ""
+    },
+    {
+      nume: "Nume",
+      descriere: "Descriere",
+      linkAvatar: ""
+    }
+  ]
+};

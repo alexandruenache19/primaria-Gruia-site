@@ -111,4 +111,4 @@ function mapStateToProps({ auth }) {
   return { auth };
 }
 
-export default connect(null, { })(HomeComponent);
+export default connect(mapStateToProps, { })(HomeComponent);

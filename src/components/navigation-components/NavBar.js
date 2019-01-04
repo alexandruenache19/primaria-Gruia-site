@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { signOut } from "../../actions";
+import { signOut, signIn } from "../../actions";
 import PropTypes from "prop-types";
 import SignIn from "../SignIn"
 
@@ -64,7 +64,6 @@ class NavBar extends Component {
               <MenuIcon />
             </IconButton>
             <Link to='/' style={{flex: 1, display: 'flex', alignItems: 'center'}} className="dark-text-button">
-              {/*<img src="../../img/magenta-logo.png" style={{maxWidth: 90}} />*/}
               <Button className="nav-bar-menu-item" color="inherit">
                 Primaria Gruia
               </Button>
@@ -84,13 +83,30 @@ class NavBar extends Component {
                 Consiliul Local
               </Button>
             </Link>
-            {this.props ?
-              <Button className="nav-bar-menu-item" color="inherit" onClick={this.props.signOut}>
-                Delogare
-                <i style={{marginLeft: 10}} className="material-icons">exit_to_app</i>
-              </Button>
-              :
-              <SignIn/>
+            {
+              this.props.auth ? (
+                <Link to='/upload' className="dark-text-button">
+                  <Button className="nav-bar-menu-item" color="inherit">
+                    Upload documente
+                  </Button>
+                </Link>
+              ) : (
+                null
+              )
+            }
+            {
+              this.props.auth ? (
+                <Button className="nav-bar-menu-item" color="inherit" onClick={this.props.signOut}>
+                  Delogare
+                  <i style={{marginLeft: 10}} className="material-icons">exit_to_app</i>
+                </Button>
+              ) : (
+                <Link to='/logare' className="dark-text-button">
+                  <Button className="nav-bar-menu-item" color="inherit">
+                    Logare
+                  </Button>
+                </Link>
+              )
             }
           </Toolbar>
         </AppBar>
@@ -129,13 +145,19 @@ class NavBar extends Component {
               Consiliul Local
             </Button>
           </Link>
-          {this.props ?
-            <Button className="nav-bar-menu-item" color="inherit" onClick={this.props.signOut}>
-              Delogare
-              <i style={{marginLeft: 10}} className="material-icons">exit_to_app</i>
-            </Button>
-            :
-            <SignIn/>
+          {
+            this.props.auth ? (
+              <Button className="nav-bar-menu-item" color="inherit" onClick={this.props.signOut}>
+                Delogare
+                <i style={{marginLeft: 10}} className="material-icons">exit_to_app</i>
+              </Button>
+            ) : (
+              <Link to='/logare' className="dark-text-button">
+                <Button className="nav-bar-menu-item" color="inherit">
+                  Logare
+                </Button>
+              </Link>
+            )
           }
         </div>
         </SwipeableDrawer>
@@ -148,4 +170,4 @@ function mapStateToProps({ auth }) {
   return { auth };
 }
 
-export default connect(null, { signOut })(NavBar);
+export default connect(mapStateToProps, { signOut, signIn })(NavBar);

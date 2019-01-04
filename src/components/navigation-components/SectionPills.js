@@ -8,14 +8,20 @@ import {
 import { connect } from "react-redux";
 import { retrieveDocuments } from '../../actions/index';
 
+import _ from 'lodash';
+
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 
 // core components
+import ListItemComponent from "./ListItemComponent";
+import List from '@material-ui/core/List';
 import NavPills from "./NavPills";
+import Profile from "./Profile";
+import GridList from '@material-ui/core/GridList';
 import $ from 'jquery';
 
-import { sectionTitles } from '../../config/constants';
+import { sectionTitles, membri } from '../../config/constants';
 
 class SectionPills extends Component {
 
@@ -30,7 +36,7 @@ class SectionPills extends Component {
 
   componentWillMount() {
     // get the documents for the entire category
-    this.props.retrieveDocuments('Guvernanta');
+    this.props.retrieveDocuments(this.props.category);
   }
 
   componentDidMount() {
@@ -39,6 +45,13 @@ class SectionPills extends Component {
       $(this).blur();
     });
   }
+
+  createMembers(){
+    const echipa = membri[this.props.category];
+    echipa.map(membru => {
+      return <Profile imagineMembru={membru.linkAvatar} numeMembru={membru.nume} descriereMembru={membru.descriere} />
+    });
+  };
 
   createTabs() {
     console.log(this.props.documents);
@@ -52,9 +65,12 @@ class SectionPills extends Component {
       console.log(documents[subCategory]);
 
       let docVisual = documents[subCategory] ? (
-        <span>
-          {documents[subCategory]['documents']["pdf1"]}
-        </span>
+          _.map(documents[subCategory]['documents'], (object, key) => {
+            console.log(object);
+            return (
+              <ListItemComponent key={key} url={object.url} pdfName={object.name} timestamp={object.timestamp}/>
+            )
+          })
       ) : (
         <span>
           <p>
@@ -71,19 +87,22 @@ class SectionPills extends Component {
           )
         }
       );
-
-      // this.state.categoriesRef.child(section.tabButtonTitle).child('documents').on('value', (snapshot) => {
-      //   const documents = snapshot.val();
-      //
-      // });
     });
-
     return currentTabs;
   };
 
   render() {
     return (
       <div id="navigation-pills">
+      {
+        this.props.category=='guvernanta' ? (
+        <GridList>
+          {this.createMembers()}
+        </GridList>
+      ) : (
+        null
+      )
+      }
         <NavPills
           color="primary"
           tabs={this.createTabs()}
