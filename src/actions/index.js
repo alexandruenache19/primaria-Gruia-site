@@ -6,26 +6,29 @@ import {
   categoriesRef
 } from "../config/firebase";
 
-export const submitDocument = (file, category, subCategory) => dispatch => {
-  const storage = storageRef.ref('/documents');
-  const categoriesRef = databaseRef.ref('/category').child(category);
-  const subCategoryRef = categoriesRef.child(subCategory);
+export const submitDocument = (category, subCategory, url, pdfName, currentTime) => dispatch => {
+  categoriesRef
+    .child(category)
+    .child(subCategory)
+    .child('documents')
+    .push({
+      name: pdfName,
+      url: url,
+      timestamp: currentTime
+    });
 
-  const uploadTask = storage
-                      .child(category)
-                      .child(subCategory)
-                      .put(file, { contentType: file.type });
+  // const uploadTask = storage
+  //                     .child(category)
+  //                     .child(subCategory)
+  //                     .put(file, { contentType: file.type });
 
-  uploadTask.then((snapshot) => {
-    subCategoryRef.child('documents').push(snapshot.downloadURL);
-  });
 };
 
 export const retrieveDocuments = (category) => dispatch => {
   categoriesRef
     .child(category)
     .on('value', snapshot => {
-      console.log(snapshot.val());
+      console.log("sunt aci:", snapshot.val());
       dispatch({
         type: "RETRIEVE_DOCUMENTS",
         payload: snapshot.val()

@@ -21,12 +21,18 @@ class Signin extends Component {
 
   render() {
     return (
-      <div>
-          <Button className="nav-bar-menu-item" color="inherit" onClick={this.props.signIn}>
-            Logare
-            <i style={{marginLeft: 10}} className="fa fa-google social-signin-icon" />
-          </Button>
-
+      <div style={{
+        display: 'flex',
+        height: '100vh',
+        justifyContent: 'center',
+        alignItems: 'center',
+        background: 'url(./img/romania-countryside.jpg) no-repeat center center fixed',
+        backgroundSize: 'cover'
+      }}>
+        <Button onClick={this.props.signIn} variant="contained">
+          Logare
+          <i style={{marginLeft: 10}} className="fa fa-google social-signin-icon" />
+        </Button>
       </div>
     );
   }
