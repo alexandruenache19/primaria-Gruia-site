@@ -25,15 +25,6 @@ import { sectionTitles, membri } from '../../config/constants';
 
 class SectionPills extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      category: props.category,
-      currentTabs: [],
-      categoriesRef: databaseRef.child('/category').child(props.category),
-    };
-  }
-
   componentWillMount() {
     // get the documents for the entire category
     this.props.retrieveDocuments(this.props.category);
@@ -45,7 +36,6 @@ class SectionPills extends Component {
       $(this).blur();
     });
   }
-
   createMembers(){
     const echipa = membri[this.props.category];
     echipa.map(membru => {
