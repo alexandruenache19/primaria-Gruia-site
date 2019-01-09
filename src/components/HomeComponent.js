@@ -39,7 +39,7 @@ class HomeComponent extends Component {
     console.log(this.props.auth);
 
     const fadingText = document.querySelector('#fading-text');
-    init(fadingText, { showCursor: false, strings: ['Transaparenta.', 'Traditii.', 'Biodiversitate.', 'Viziuni europeane.'] });
+    init(fadingText, { showCursor: false, strings: ['Transparenta.', 'Traditii.', 'Biodiversitate.', 'Viziune europeana.'] });
   }
 
   renderSections = () => {
