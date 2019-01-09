@@ -4,7 +4,7 @@ import {
   databaseRef,
   storageRef,
   categoriesRef
-} from "../config/firebase";
+} from '../config/firebase'
 
 export const submitDocument = (category, subCategory, url, pdfName, currentTime) => dispatch => {
   categoriesRef
@@ -15,95 +15,68 @@ export const submitDocument = (category, subCategory, url, pdfName, currentTime)
       name: pdfName,
       url: url,
       timestamp: currentTime
-    });
-
-  // const uploadTask = storage
-  //                     .child(category)
-  //                     .child(subCategory)
-  //                     .put(file, { contentType: file.type });
-
-};
+    })
+}
 
 export const retrieveDocuments = (category) => dispatch => {
   categoriesRef
     .child(category)
     .on('value', snapshot => {
-      console.log("sunt aci:", snapshot.val());
       dispatch({
-        type: "RETRIEVE_DOCUMENTS",
+        type: 'RETRIEVE_DOCUMENTS',
         payload: snapshot.val()
-      });
-  });
-};
-
-export const retrieveSubcategories = (category) => dispatch => {
-  const categoriesRef = databaseRef.ref('category').child(category);
-  categoriesRef.child('subCategory').on('value', (snapshot) => {
-    let subCategories = snapshot.val();
-    if (subCategories) {
-      console.log("Retrived:",subCategories);
-      dispatch({
-        type: "RETRIEVE_SUBCATEGORIES",
-        payload: subCategories
-      });
-    } else {
-      dispatch({
-        type: "RETRIEVE_SUBCATEGORIES",
-        payload: null
-      });
-    };
-  });
-};
+      })
+    })
+}
 
 export const fetchUser = () => dispatch => {
   authRef.onAuthStateChanged(user => {
     if (user) {
       dispatch({
-        type: "FETCH_USER",
+        type: 'FETCH_USER',
         payload: user
-      });
+      })
     } else {
       dispatch({
-        type: "FETCH_USER",
+        type: 'FETCH_USER',
         payload: null
-      });
+      })
     }
-  });
-};
+  })
+}
 
 export const signIn = () => dispatch => {
   authRef
     .signInWithPopup(provider)
     .then(result => {
-      // Check if user signed in with @satalia email.
-      if (result.user.email.includes("@")) {
-        console.log("valid email");
+      if (result.user.email.includes('@')) {
+        console.log('valid email')
       } else {
-        console.log("not a valid email");
+        console.log('not a valid email')
         // Sign user out automatically if the email is not correct
         authRef
           .signOut()
           .then(() => {
             // Sign-out successful.
-            window.alert('Please sign in with a valid email. :)');
+            window.alert('Please sign in with a valid email. :)')
           })
           .catch(error => {
-            console.log(error);
-          });
+            console.log(error)
+          })
       }
     })
     .catch(error => {
-      console.log(error);
-    });
-};
+      console.log(error)
+    })
+}
 
 export const signOut = () => dispatch => {
   authRef
     .signOut()
     .then(() => {
-      console.log("Sign-out successful.")
+      console.log('Sign-out successful.')
     })
     .catch(error => {
-      console.log(error);
-    });
-};
+      console.log(error)
+    })
+}

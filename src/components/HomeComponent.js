@@ -12,8 +12,9 @@ import Typography from '@material-ui/core/Typography';
 import NavBar from './navigation-components/NavBar';
 import { init } from 'ityped';
 import $ from 'jquery';
+import Trend from 'react-trend';
 
-var sections = {
+const sections = {
   'Guvernanta': {
     'imagine': "http://www.gds.ro/wp-content/uploads/2017/09/primarie-municipiului-Craiova.jpg",
     'descriere': 'Asta e descrierea'
@@ -95,6 +96,7 @@ class HomeComponent extends Component {
             <p style={{position:'absolute', fontSize: '1.5rem'}} id="fading-text"></p>
           </h1>
         </div>
+
         <Grid container style={{flexGrow: 1}} spacing={16} style={{padding: '3rem'}}>
           <Grid item xs={12}>
             <Grid container justify="center" spacing={16}>

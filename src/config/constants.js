@@ -1,127 +1,123 @@
-import React from 'react';
+import React from 'react'
 
 // @material-ui/icons
-import Dashboard from "@material-ui/icons/Dashboard";
-import Schedule from "@material-ui/icons/Schedule";
-import List from "@material-ui/icons/List";
+import Dashboard from '@material-ui/icons/Dashboard'
+import Schedule from '@material-ui/icons/Schedule'
+import List from '@material-ui/icons/List'
 
 export const sectionTitles = {
-  "consiliul":[
+  'consiliul': [
     {
-      tabButtonTitle: "Echipă",
+      tabButtonTitle: 'Echipă',
       tabIcon: Dashboard
     },
     {
-      tabButtonTitle: "Rapoarte de activitate",
+      tabButtonTitle: 'Rapoarte de activitate',
       tabIcon: List
     },
     {
-      tabButtonTitle: "Dezbateri publice",
+      tabButtonTitle: 'Dezbateri publice',
       tabIcon: List
     },
     {
-      tabButtonTitle: "Hotărâri Consiliul Local",
+      tabButtonTitle: 'Hotărâri Consiliul Local',
       tabIcon: List
     },
     {
-      tabButtonTitle:  "Proiecte de hotărâri",
+      tabButtonTitle: 'Proiecte de hotărâri',
       tabIcon: List
     },
     {
-      tabButtonTitle: "Declarații de avere Consiliul Local",
+      tabButtonTitle: 'Declarații de avere Consiliul Local',
       tabIcon: Schedule
     }
   ],
-  "guvernanta":[
+  'guvernanta': [
     {
-      tabButtonTitle: "Conducere",
+      tabButtonTitle: 'Structură',
       tabIcon: Dashboard
     },
     {
-      tabButtonTitle: "Structură",
+      tabButtonTitle: 'Formulare',
       tabIcon: Dashboard
     },
     {
-      tabButtonTitle: "Formulare",
+      tabButtonTitle: 'Taxe și impozite locale',
       tabIcon: Dashboard
     },
     {
-      tabButtonTitle: "Taxe și impozite locale",
+      tabButtonTitle: 'Declarații de avere',
       tabIcon: Dashboard
     },
     {
-      tabButtonTitle: "Declarații de avere",
-      tabIcon: Dashboard
-    },
-    {
-      tabButtonTitle: "Informatii Publice",
+      tabButtonTitle: 'Informatii Publice',
       tabIcon: List
     },
     {
-      tabButtonTitle: "Proiecte",
+      tabButtonTitle: 'Proiecte',
       tabIcon: List
     },
     {
-      tabButtonTitle: "Buget",
+      tabButtonTitle: 'Buget',
       tabIcon: List
-    },
+    }
   ],
-  "comuna":[
+  'comuna': [
     {
-      tabButtonTitle: "Știri și anunțuri",
+      tabButtonTitle: 'Știri și anunțuri',
       tabIcon: Dashboard
     },
     {
-      tabButtonTitle: "Evenimente",
+      tabButtonTitle: 'Evenimente',
       tabIcon: List
     },
     {
-      tabButtonTitle: "Inițiative locale",
+      tabButtonTitle: 'Inițiative locale',
       tabIcon: List
     },
     {
-      tabButtonTitle: "Educație și cultură",
+      tabButtonTitle: 'Educație și cultură',
       tabIcon: List
     },
     {
-      tabButtonTitle:  "Tradiții",
+      tabButtonTitle: 'Tradiții',
       tabIcon: List
-    },
+    }
   ]
-};
+}
 export const membri = {
-  "consiliul":[
+  'consiliul': [
     {
-      nume: "Nume",
-      descriere: "Descriere",
-      linkAvatar: ""
+      nume: 'Nume',
+      descriere: 'Descriere',
+      linkAvatar: './img/profileImg/profile1.jpg'
     },
     {
-      nume: "Nume",
-      descriere: "Descriere",
-      linkAvatar: ""
+      nume: 'Nume',
+      descriere: 'Descriere',
+      linkAvatar: '/img/ProfileImg/profile1.jpg'
     },
     {
-      nume: "Nume",
-      descriere: "Descriere",
-      linkAvatar: ""
+      nume: 'Nume',
+      descriere: 'Descriere',
+      linkAvatar: '/img/ProfileImg/profile1.jpg'
     }
   ],
-  "guvernanta":[
+  'guvernanta': [
     {
-      nume: "Nume",
-      descriere: "Descriere",
-      linkAvatar: ""
+      nume: 'Nume',
+      descriere: 'Descriere',
+      linkAvatar: 'public/img/ProfileImg/profile1.jpg'
     },
     {
-      nume: "Nume",
-      descriere: "Descriere",
-      linkAvatar: ""
+      nume: 'Nume',
+      descriere: 'Descriere',
+      linkAvatar: '/img/ProfileImg/profile1.jpg'
     },
     {
-      nume: "Nume",
-      descriere: "Descriere",
-      linkAvatar: ""
+      nume: 'Nume',
+      descriere: 'Descriere',
+      linkAvatar: '/img/ProfileImg/profile1.jpg'
     }
   ]
-};
+}

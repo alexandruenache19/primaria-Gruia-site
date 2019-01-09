@@ -1,24 +1,24 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import NavBar from '../navigation-components/NavBar';
-import SectionPills from '../navigation-components/SectionPills';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import NavBar from '../navigation-components/NavBar'
+import SectionPills from '../navigation-components/SectionPills'
+import Profile from '../navigation-components/Profile'
+import { membri } from '../../config/constants'
 
+const category = 'guvernanta'
 class ConsiliulLocalComponent extends Component {
-
-  render() {
+  render () {
+    const echipa = membri[category]
     return (
       <div >
         <NavBar />
-        <div style={{padding: '3rem'}}>
-          <SectionPills category={"consiliul"} />
+        <div style={{ padding: '3rem' }}>
+          <Profile echipa={echipa} />
+          <SectionPills category={category} />
         </div>
       </div>
-    );
+    )
   }
 }
 
-function mapStateToProps({ auth }) {
-  return { auth };
-}
-
-export default connect(null, { })(ConsiliulLocalComponent);
+export default connect(null, { })(ConsiliulLocalComponent)

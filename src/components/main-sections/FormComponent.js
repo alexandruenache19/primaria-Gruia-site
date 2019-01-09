@@ -134,15 +134,20 @@ class Form extends Component {
                 this.state.url &&
                 <a href={this.state.url} />
               }
-              <FileUploader
-                accept="pdf/*"
-                name="document"
-                storageRef={storageRef}
-                onUploadStart={this.handleUploadStart}
-                onUploadError={this.handleUploadError}
-                onUploadSuccess={this.handleUploadSuccess}
-                onProgress={this.handleProgress}
-              />
+              <label style={{backgroundColor: 'steelblue', color: 'white', padding: 10, borderRadius: 4, pointer: 'cursor'}}>
+                Atasati documentul dorit
+                <FileUploader
+                  hidden
+                  accept="pdf/*"
+                  name="document"
+                  storageRef={storageRef}
+                  onUploadStart={this.handleUploadStart}
+                  onUploadError={this.handleUploadError}
+                  onUploadSuccess={this.handleUploadSuccess}
+                  onProgress={this.handleProgress}
+                />
+               </label>
+
               <Button onClick={handleFormSubmit} variant="contained" color="secondary" type="submit" style={{marginTop: '1em'}}>
                 Submit
               </Button>
