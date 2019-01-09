@@ -12,7 +12,6 @@ import Typography from '@material-ui/core/Typography';
 import NavBar from './navigation-components/NavBar';
 import { init } from 'ityped';
 import $ from 'jquery';
-import Trend from 'react-trend';
 
 const sections = {
   'Guvernanta': {
