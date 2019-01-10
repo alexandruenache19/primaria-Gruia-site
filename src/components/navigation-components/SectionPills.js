@@ -5,6 +5,7 @@ import _ from 'lodash'
 
 // core components
 import ListItemComponent from './ListItemComponent'
+import ProiecteItemList from './ProiecteItemList'
 import NavPills from './NavPills'
 import $ from 'jquery'
 import { sectionTitles } from '../../config/constants'
@@ -36,7 +37,8 @@ class SectionPills extends Component {
         _.map(documents[subCategory]['documents'], (object, key) => {
           console.log(object)
           return (
-            <ListItemComponent key={key} url={object.url} pdfName={object.name} timestamp={object.timestamp} />
+            <ProiecteItemList key={key} url={object.url} pdfName={object.name} timestamp={object.timestamp} />
+          //  <ListItemComponent key={key} url={object.url} pdfName={object.name} timestamp={object.timestamp} />
           )
         })
       ) : (

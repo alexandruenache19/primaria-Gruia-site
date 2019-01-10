@@ -8,10 +8,6 @@ import List from '@material-ui/icons/List'
 export const sectionTitles = {
   'consiliul': [
     {
-      tabButtonTitle: 'Echipă',
-      tabIcon: Dashboard
-    },
-    {
       tabButtonTitle: 'Rapoarte de activitate',
       tabIcon: List
     },
@@ -34,6 +30,10 @@ export const sectionTitles = {
   ],
   'guvernanta': [
     {
+      tabButtonTitle: 'Proiecte',
+      tabIcon: List
+    },
+    {
       tabButtonTitle: 'Structură',
       tabIcon: Dashboard
     },
@@ -51,10 +51,6 @@ export const sectionTitles = {
     },
     {
       tabButtonTitle: 'Informatii Publice',
-      tabIcon: List
-    },
-    {
-      tabButtonTitle: 'Proiecte',
       tabIcon: List
     },
     {
@@ -88,36 +84,42 @@ export const sectionTitles = {
 export const membri = {
   'consiliul': [
     {
-      nume: 'Nume',
-      descriere: 'Descriere',
-      linkAvatar: '/img/profile1.jpg'
-    },
-    {
-      nume: 'Nume',
-      descriere: 'Descriere',
-      linkAvatar: '/img/profile1.jpg'
-    },
-    {
-      nume: 'Nume',
-      descriere: 'Descriere',
-      linkAvatar: '/images/profile1.jpg'
-    }
-  ],
-  'guvernanta': [
-    {
-      nume: 'Klau$ zis baiatu cu 4 case',
-      descriere: 'Drumul durerii de la Sibiu la Bucuresti. Plecat de la Sibiu cu vise mareta de a fura alaturi de baietii din grupa mare a fost dezamagit orientandu se catre Bruxelles',
+      nume: 'Ion Adamescu',
+      functia: 'Consilier',
+      descriere: 'O mica descriere despre acest membru',
       linkAvatar: '/images/profile1.jpg'
     },
     {
-      nume: 'Dragnea mana usoara',
-      descriere: 'Reusind cu o deosebita inversunare sa conduca Romania timp de 3 ani specimenul Dragnea mana usoara continua sa gaseasca metode de a ocoli beciul domnesc.',
+      nume: 'Dumitru',
+      functia: 'Consilier',
+      descriere: 'O mica descriere despre acest membru',
       linkAvatar: '/images/profile2.jpg'
     },
     {
       nume: 'Viorica',
-      descriere: 'Cunoscuta si sub numele de ..Prim ministru prim ministru dar Liviu ce fac acum?.. a reusit sa impresioneze o intreaga natiune cu abilitatile lingvistice',
-      linkAvatar:'/images/profile3.jpg'
+      functia: 'Consilier',
+      descriere: 'O mica descriere despre acest membru',
+      linkAvatar: '/images/profile3.jpg'
+    }
+  ],
+  'guvernanta': [
+    {
+      nume: 'Ion Adamescu',
+      functia: 'Primar',
+      descriere: 'O mica descriere despre acest membru',
+      linkAvatar: '/images/profile1.jpg'
+    },
+    {
+      nume: 'Dumitru',
+      functia: 'Vice-Primar',
+      descriere: 'O mica descriere despre acest membru',
+      linkAvatar: '/images/profile2.jpg'
+    },
+    {
+      nume: 'Viorica',
+      functia: 'Secretar',
+      descriere: 'O mica descriere despre acest membru',
+      linkAvatar: '/images/profile3.jpg'
     }
   ]
 }

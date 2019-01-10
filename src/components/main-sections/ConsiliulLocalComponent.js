@@ -5,7 +5,7 @@ import SectionPills from '../navigation-components/SectionPills'
 import Profile from '../navigation-components/Profile'
 import { membri } from '../../config/constants'
 
-const category = 'guvernanta'
+const category = 'consiliul'
 class ConsiliulLocalComponent extends Component {
   render () {
     const echipa = membri[category]

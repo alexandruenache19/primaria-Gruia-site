@@ -38,6 +38,9 @@ class Profile extends Component {
                 <Typography gutterBottom variant='h5' component='h2'>
                   {membru['nume']}
                 </Typography>
+                <Typography gutterBottom variant='subtitle1'>
+                  {membru['functia']}
+                </Typography>
                 <Typography component='p'>
                   {membru['descriere']}
                 </Typography>
